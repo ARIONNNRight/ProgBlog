@@ -1,0 +1,269 @@
+﻿body {
+    padding-top: 50px;
+    /*padding-bottom: 20px;*/
+    background: #e3e0ef url('images/bg.png'); 
+    /*font-size: 62.5%;*/ 
+    line-height: 1; 
+
+    padding-bottom: 65px;
+    font: 300 18px/1.666666666667em geomanist,Helvetica,Arial;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set table head style for bootstrap */
+.table .thead-light th {
+    color: #495057;
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+/* CSS for Drop Down Menu */
+
+.dropbtn {
+    background-color: #000;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    background: Black;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+    margin:3px;
+}
+
+.dropdown-content a:hover, li.dropdown:hover a:hover, li.dropdown:hover > a  {background-color: #f1f1f1;  color: #000;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/*  Css for User Avatar photo**/
+
+.profile-background-image {
+    background: url("/Content/images/profile-photo-background.png") center/cover;
+    height:180px;
+    width:100%;
+}
+
+.profile-photo-container {
+    margin: -70px auto 0;
+    position: relative;
+    width: 200px;
+}
+ .profile-photo-wrapper {
+    background-color: rgba(243,246,248,.94);
+    border: 4px solid #fff;
+    box-shadow: inset 0 1.5px 3px 0 rgba(0,0,0,.15), 0 1.5px 3px 0 rgba(0,0,0,.15);
+    box-sizing: content-box;
+    margin: auto;
+    position: relative;
+}
+
+ .entity-profile-photo-circle-8 {
+    width: 128px;
+    height: 128px;
+    box-sizing: border-box;
+    background-clip: content-box;
+    /*border: 0 solid transparent;*/
+    border-radius: 49.9%;
+}
+
+
+
+  .profile-photo-edit {
+    display: block;
+    background: url("/Content/images/profile-photo.png")  no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 56px;
+    height: 56px;
+    margin-top: calc(56px/2 * -1);
+    margin-left: calc(56px/2 * -1);
+}
+.section-profile-photo {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.profile-photo {
+    background: url("/Content/images/profile-photo.png") no-repeat;
+    width: 56px;
+    height: 56px;
+}
+
+.profile-photo-file-upload-input, .profile-photo-file-upload-input:active, .profile-photo-file-upload-input:hover, .profile-photo-file-upload-input:focus {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding-left: 100%;
+    overflow: hidden;
+    background-color: transparent;
+    border:none;
+    outline: none;
+}
+
+.profile-photo-img, .profile-photo-img:active, .profile-photo-img:focus {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    border:none;
+    outline: none;
+    display:none;
+}
+
+
+/**   Css for Comments on Posts*/
+p { font-family: Arial, Geneva, Verdana, sans-serif; /*font-size: 1.3em;*/ line-height: 1.42em; margin-bottom: 12px; font-weight: normal; color: #656565; }
+/* page layout structure */ 
+#w { display: block; width: 1000px; margin: 0 auto; padding-top: 35px; }
+
+#w legend { margin-bottom: 0px; width:auto;}
+
+#container { 
+  display: block; 
+  width: 100%; 
+  background: #fff; 
+  padding: 14px 10px; 
+  -webkit-border-radius: 4px; 
+  -moz-border-radius: 4px; 
+  border-radius: 4px; 
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+
+/* comments area */
+#comments { display: block; }
+
+#comments .cmmnt, ul .cmmnt, ul ul .cmmnt { display: block; position: relative; padding-left: 65px; border-top: 1px solid #ddd; }
+
+#comments .cmmnt .avatar  { position: absolute; top: 8px; left: 0; }
+#comments .cmmnt .avatar img { 
+  -webkit-border-radius: 3px; 
+  -moz-border-radius: 3px; 
+  border-radius: 3px; 
+  -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.44);
+  -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.44);
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.44);
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  -ms-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+#comments .cmmnt .avatar a:hover img { opacity: 0.77; }
+
+#comments .cmmnt .cmmnt-content { padding: 0px 3px; padding-bottom: 0px; padding-top: 8px; }
+
+#comments .cmmnt .cmmnt-content header { /*font-size: 1.3em;*/ display: block; margin-bottom: 8px; }
+#comments .cmmnt .cmmnt-content header .pubdate { color: #777; }
+#comments .cmmnt .cmmnt-content header .userlink { font-weight: bold; } 
+
+#comments .cmmnt .replies { margin-bottom: 7px; }
+
+
+/***** Css for Posts *****/
+
+.content 
+{
+    padding: 1em 2.25em;
+    margin: 0;
+    color: #333;
+    background-color: #fff;
+    font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+}
+
+.content p
+{
+	margin: 0 0 1.5em;
+	line-height: 1.5;
+}
+.content hr
+{
+	height: 0;
+	margin-top: 1em;
+	margin-bottom: 2em;
+	border: 0;
+	border-top: 1px solid #ddd;
+}
+
+.content .list-unstyled
+{
+	padding-left: 0;
+	list-style: none;
+}
+
+.content .list-inline
+{
+	padding-left: 0;
+	margin-left: -5px;
+	list-style: none;
+}
+
+.content .list-inline > li
+{
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+
+/***** Css for Reply form *****/
+blockquote {
+    padding: 10px 20px;
+    margin: 0;
+    font-size: 17.5px;
+    border-left: 5px solid #eee;
+}
+
+.btn { padding-top : 0 !important; padding-bottom:0 !important}

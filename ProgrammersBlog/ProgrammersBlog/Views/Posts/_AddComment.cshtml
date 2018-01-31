@@ -1,0 +1,64 @@
+﻿@model ProgrammersBlog.Models.PostModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<fieldset>
+      
+    <h2> Add new Comment</h2>
+   
+
+        <div class="form-horizontal">
+ 
+           @*@using (Html.BeginForm())
+           {*@
+            @*@Html.AntiForgeryToken()*@
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                             
+                <div class="col-md-10">
+                    <textarea id="body" name="body" cols="50" rows="4"></textarea> 
+                </div>
+            </div>          
+            <div class="form-group">
+                @Html.Hidden("postId", Model.PostId)
+                           
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input id="addCommentButton" type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+@*}*@
+        </div>
+      
+    <script type="text/javascript">
+       $(document).ready(function() {
+           var submit = $('#addCommentButton').click(function () {
+               var _postId = $('#postId').val();
+               var _commentBody = $('#body').val();
+
+               $.ajax({
+                   url: '@Url.Action("CreateComment", "Posts")',
+                   type: "POST",
+                   data: {
+                       "postId": _postId,
+                       "commentBody": _commentBody
+                   },
+           
+                   success: function (data, textStatus, jqXHR) {
+                       $('#PostCommentsTable').html(data);
+                   }
+               })
+               return false;
+           });
+        });
+    </script>
+   
+</fieldset>
+
+

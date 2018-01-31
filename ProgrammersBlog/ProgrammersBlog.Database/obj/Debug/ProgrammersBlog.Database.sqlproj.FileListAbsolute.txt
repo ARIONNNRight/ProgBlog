@@ -1,0 +1,9 @@
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Database\bin\Debug\ProgrammersBlog.Database.dacpac
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Database\bin\Debug\ProgrammersBlog.Database.dll
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Database\bin\Debug\ProgrammersBlog.Database.pdb
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Database\obj\Debug\Model.xml
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Database\obj\Debug\refactor.xml
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Database\obj\Debug\postdeploy.sql
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Database\obj\Debug\predeploy.sql
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Database\obj\Debug\ProgrammersBlog.Database.dll
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Database\obj\Debug\ProgrammersBlog.Database.pdb

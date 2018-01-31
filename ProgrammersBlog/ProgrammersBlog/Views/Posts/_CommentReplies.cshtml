@@ -1,0 +1,81 @@
+﻿@model ProgrammersBlog.Models.CommentModel
+@using ProgrammersBlog.Models
+@using ProgrammersBlog.Controllers
+@using ProgrammersBlog.Common.Extentions
+<ul class="replies" id="commentReplies_@Model.CommentId">
+    @{
+        if (Model.Replies.Count > 0)
+        {
+            foreach (var item in Model.Replies)
+            {
+                <li class="cmmnt">
+                    <div class="avatar"><a href="javascript:void(0);"><img src="/Content/images/pig.png" width="55" height="55" alt="Sir_Pig photo avatar"></a></div>
+                    <div class="cmmnt-content">
+                        <header>
+                            <a href="javascript:void(0);" class="userlink">Sir_Pig</a> -
+                            <span class="pubdate" title="@item.CreatedDate.ToString("f")">posted @item.CreatedDate.TimeAgo()</span>
+                            <a href="#" class="replyReply" id="replyReply_@item.ReplyId"> - Reply</a>
+                            <a href="#" class="" id="likeReply_@item.ReplyId"> - Like</a>
+                        </header>
+                        <p>@item.Body</p>
+                    </div>
+                    @using (Html.BeginForm("", "", FormMethod.Post, new { role = "form", id = "reply_" + @item.ReplyId, @class = "comTextareaParent" }))
+                    {
+                    @Html.AntiForgeryToken()
+                    <blockquote id="reply_blockquote_@item.ReplyId" class="hide">
+                        <input type="hidden" name="replyId" id="replyId" value="@item.ReplyId" />
+                        <textarea name="replyBody" id="replyBody" class="autoExpand forumPost form-control" rows="4" data-min-rows="4" placeholder="Enter your text here"></textarea>
+                        <input type="submit" id="submit_reply_@item.ReplyId" class="forumPostButton btn btn-default" value="Send" />
+                    </blockquote>
+                     }
+
+                    @{
+                        @Html.Partial("_ReplyReplies", item)
+                    }
+                </li>
+
+             }
+        }
+
+    }
+</ul>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        // attach click event to Reply button to display the reply form for a user input
+        $(".replyReply").click(function (e) {
+            // get replyId
+            var replyId = $(this).attr("id").replace("replyReply_", "");
+            // display the reply form
+            $("blockquote[id='reply_blockquote_" + replyId + "']").removeClass('hide');
+            // hide the Reply button
+            $(this).hide();
+
+            return false;
+        });
+        // attach submit event to the reply form via AJAX 
+        $("form[id^='reply_']").off();
+        $("form[id^='reply_']").on("submit", function (e) {
+            e.preventDefault();
+            //get comment identifier
+            var replyId = $(this).find("input[name=replyId]").val();
+            $.ajax({
+                url: '@Url.Action("NewReplyReply", "Posts")',
+                type: "POST",
+                data: $(this).serialize(),
+                success: function (data, textStatus, jqXHR) {
+                    //update the content of the commentReplies container
+                    $('#replyReplies_' + replyId).html(data);
+                    //hide reply form assigned to the comment
+                    $("blockquote[id='reply_blockquote_" + replyId + "']").addClass('hide');
+                    //show Reply button to the user
+                    $("#replyReply_" + replyId).show();
+                    return false;
+                }
+            })
+            return false;
+        });
+
+    }); // end $(document).ready
+</script>

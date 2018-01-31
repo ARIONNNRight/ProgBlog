@@ -1,0 +1,23 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Post]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Table rebuild
+       [dbo].[Post] (Table)
+
+** Supporting actions
+     Drop
+       [dbo].[DF_Post_Deleted] (Default Constraint)
+       [dbo].[DF_Post_CreatedDate] (Default Constraint)
+       [dbo].[FK_Post_User] (Foreign Key)
+       [dbo].[FK_Comment_Post] (Foreign Key)
+     Create
+       [dbo].[FK_Post_User] (Foreign Key)
+       [dbo].[FK_Comment_Post] (Foreign Key)

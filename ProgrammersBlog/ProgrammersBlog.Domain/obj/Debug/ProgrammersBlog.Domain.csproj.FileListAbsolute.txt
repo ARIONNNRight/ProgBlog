@@ -1,0 +1,4 @@
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Domain\bin\Debug\ProgrammersBlog.Domain.dll
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Domain\bin\Debug\ProgrammersBlog.Domain.pdb
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Domain\obj\Debug\ProgrammersBlog.Domain.dll
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Domain\obj\Debug\ProgrammersBlog.Domain.pdb

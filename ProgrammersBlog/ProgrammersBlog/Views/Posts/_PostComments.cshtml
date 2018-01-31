@@ -1,0 +1,86 @@
+﻿@model ProgrammersBlog.Models.PostModel
+@using ProgrammersBlog.Models
+@using ProgrammersBlog.Controllers
+@using ProgrammersBlog.Common.Extentions
+
+<div id="PostCommentsTable">
+    <div id="allcomment">
+    @{
+        if (Model.Comments.Count > 0)
+        {
+
+            <h5>Comments to the post </h5>
+                <div id="container">
+                    <ul id="comments">
+                        @foreach (CommentModel item in Model.Comments)
+                        {
+                            <li class="cmmnt">
+                                <div class="avatar"><a href="javascript:void(0);"><img src="/Content/images/dark-cubes.png" width="55" height="55" alt="DarkCubes photo avatar"></a></div>
+                                <div class="cmmnt-content">
+                                    <header>
+                                        <a href="javascript:void(0);" class="userlink">DarkCubes</a> - 
+                                        <span class="pubdate" title="@item.CreatedDate.ToString("f")">posted @item.CreatedDate.TimeAgo()</span> 
+                                        <a href="#" class="replyComment" id="replyComment_@item.CommentId"> - Reply</a> 
+                                        <a href="#" class="" id="likeComment_@item.CommentId"> - Like</a>
+                                    </header>
+                                    <p>@item.Body</p>
+                                </div>
+                                @using (Html.BeginForm("NewReply", "Posts", FormMethod.Post, new { role = "form", id = "comment_" + @item.CommentId, @class = "comTextareaParent"}))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <blockquote id="comment_blockquote_@item.CommentId" class="hide">
+                                        <input type="hidden" name="commentId" id="commentId" value="@item.CommentId" />
+                                        <textarea name="replyBody" id="replyBody" class="autoExpand forumPost form-control" rows="4" data-min-rows="4" placeholder="Enter your text here"></textarea>
+                                        <input type="submit" id="submit_comment_@item.CommentId" class="forumPostButton btn btn-default" value="Send"/>
+                                    </blockquote>
+                                }
+                   
+                                @{
+                                    item.Replies = ((PostsController)this.ViewContext.Controller).GetReplies(item);
+
+                                    @Html.Partial("_CommentReplies", item)
+                                }
+                            </li>
+                         }
+                     </ul>
+               </div>
+        }
+    }
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $(".replyComment").click(function (e) {
+            var commentId = $(this).attr("id").replace("replyComment_", "");
+            $("blockquote[id='comment_blockquote_" + commentId + "']").removeClass('hide');
+            $(this).hide();
+        });
+
+    });
+
+
+
+     $(document).ready(function() {
+         var submit = $("form[id^='comment_']").submit(function (e) {
+             //get comment identifier
+             var commentId = $(this).find("input[name=commentId]").val();
+               $.ajax({
+                   url: '@Url.Action("NewReply", "Posts")',
+                   type: "POST",
+                   data: $(this).serialize(),
+                   success: function (data, textStatus, jqXHR) {
+                       //update the content of the commentReplies container
+                       $('#commentReplies_' + commentId).html(data);
+                       //hide reply form assigned to the comment
+                       $("blockquote[id='comment_blockquote_" + commentId + "']").addClass('hide');
+                       //show Reply button to the user
+                       $("#replyComment_" + commentId).show();
+                       return false;
+                   }
+               })
+               return false;
+           });
+     });
+</script>

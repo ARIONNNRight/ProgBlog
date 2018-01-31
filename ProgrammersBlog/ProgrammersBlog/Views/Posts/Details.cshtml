@@ -1,0 +1,29 @@
+﻿@model ProgrammersBlog.Models.PostModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div id="w">
+    <div class="content">
+        <div class="main">
+            <h1>@Html.DisplayFor(model => model.Title)</h1>
+
+            @Html.Raw(Model.Body)
+
+        </div>
+    </div>
+
+    @Html.Partial("_PostComments", Model)
+
+    <br />
+
+    @Html.Partial("_AddComment", Model)
+
+    
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PostId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,5 @@
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Common\bin\Debug\ProgrammersBlog.Common.dll
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Common\bin\Debug\ProgrammersBlog.Common.pdb
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Common\obj\Debug\ProgrammersBlog.Common.dll
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Common\obj\Debug\ProgrammersBlog.Common.pdb
+C:\Projects\ProgrammersBlog\ProgrammersBlog.Common\obj\Debug\ProgrammersBlog.Common.csprojResolveAssemblyReference.cache

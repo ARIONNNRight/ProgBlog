@@ -1,0 +1,5 @@
+C:\itstep_repo\Daria\ProgrammersBlog\ProgrammersBlogDomain\bin\Debug\ProgrammersBlogDomain.dll
+C:\itstep_repo\Daria\ProgrammersBlog\ProgrammersBlogDomain\bin\Debug\ProgrammersBlogDomain.pdb
+C:\itstep_repo\Daria\ProgrammersBlog\ProgrammersBlogDomain\obj\Debug\ProgrammersBlogDomain.csprojResolveAssemblyReference.cache
+C:\itstep_repo\Daria\ProgrammersBlog\ProgrammersBlogDomain\obj\Debug\ProgrammersBlogDomain.dll
+C:\itstep_repo\Daria\ProgrammersBlog\ProgrammersBlogDomain\obj\Debug\ProgrammersBlogDomain.pdb
